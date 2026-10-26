@@ -8,9 +8,9 @@ Depuis le dossier du site, lancer `python -m http.server 4173`, puis ouvrir `htt
 
 ## Contenu
 
-- Un seul lecteur public : le profil SoundCloud `boiled_stone`, avec un lien vers l’URL de partage fournie. Le lecteur se charge à son ouverture, sans lecture automatique.
-- La piste bonus se révèle avec `↑ ↑ ↓ ↓ ← → ← →`. Les quatre boutons directionnels du pied de page permettent aussi cette saisie sur écran tactile. La révélation dure le temps de la page et ne demande aucune touche supplémentaire.
-- Galerie : six images à l’ouverture, six autres dans « Prolonger l’exploration ». Agrandissement, téléchargement, navigation par flèches, fermeture avec Échap et retour du focus à l’image d’origine.
+- Un seul lecteur public : le profil SoundCloud `boiled_stone`, avec un lien vers l’URL de partage fournie. Le lecteur se charge à l’approche de la section Musique, sans lecture automatique.
+- La piste bonus se révèle uniquement au clavier avec `↑ ↑ ↓ ↓ ← → ← →`. Aucun bouton directionnel ni indice visible. La révélation dure le temps de la page et ne demande aucune touche supplémentaire. Les flèches de navigation de la visionneuse ne participent pas au code.
+- Galerie : six images à l’ouverture, six autres avec « Voir les 6 autres ». Agrandissement, téléchargement, navigation par flèches, fermeture avec Échap et retour du focus à l’image d’origine.
 - La page et les liens restent utilisables sans JavaScript ; la visionneuse et le code secret nécessitent JavaScript.
 
 ## Images et typographie

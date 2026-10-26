@@ -32,21 +32,33 @@
   };
 
   const profile = document.getElementById("profile-player");
-  profile.addEventListener("toggle", () => {
-    const container = profile.querySelector("[data-profile-player]");
-    if (!profile.open) {
-      container.querySelector("iframe")?.remove();
-      return;
-    }
-    if (!container.querySelector("iframe")) {
-      container.prepend(
-        makePlayer(
-          "https://api.soundcloud.com/users/776350792",
-          "Profil SoundCloud de Boiled Stone",
-        ),
-      );
-    }
-  });
+  function loadProfile() {
+    if (profile.querySelector("iframe")) return;
+    const player = makePlayer(
+      "https://api.soundcloud.com/users/776350792",
+      "Profil SoundCloud de Boiled Stone",
+    );
+    profile.prepend(player);
+    player.addEventListener(
+      "load",
+      () => {
+        profile.querySelector(".player-placeholder")?.remove();
+        profile.classList.add("is-loaded");
+      },
+      { once: true },
+    );
+  }
+  if ("IntersectionObserver" in window) {
+    const playerObserver = new IntersectionObserver(
+      (entries, observer) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        loadProfile();
+        observer.disconnect();
+      },
+      { rootMargin: "180px" },
+    );
+    playerObserver.observe(profile);
+  } else loadProfile();
 
   // The eight directions are the complete sequence; no extra keys are required.
   const sequence = [
@@ -84,7 +96,7 @@
         ),
       );
     document.getElementById("announcement").textContent =
-      "Signal trouvé. La piste secrète est maintenant disponible.";
+      "La piste bonus est maintenant disponible.";
     document.getElementById("secret-title").focus({ preventScroll: true });
     secret.scrollIntoView({
       behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -113,13 +125,14 @@
     if (sequence.includes(event.key)) acceptDirection(event.key);
     else recent = [];
   });
-  document.querySelectorAll("[data-direction]").forEach((button) => {
-    button.addEventListener("click", () =>
-      acceptDirection(button.dataset.direction),
-    );
-  });
 
   const items = [...document.querySelectorAll(".gallery-item")];
+  const moreGallery = document.querySelector(".more-gallery");
+  moreGallery.addEventListener("toggle", () => {
+    moreGallery.querySelector(".more-label").textContent = moreGallery.open
+      ? "Réduire"
+      : "Voir les 6 autres";
+  });
   const image = document.getElementById("lightbox-image");
   const imageBox = dialog.querySelector(".lightbox-image");
   const error = dialog.querySelector(".lightbox-error");
@@ -219,7 +232,7 @@
       },
       { rootMargin: "-20% 0px -50% 0px", threshold: 0 },
     );
-    ["accueil", "musique", "univers", "apropos"].forEach((id) =>
+    ["accueil", "musique", "univers"].forEach((id) =>
       observer.observe(document.getElementById(id)),
     );
   }
