@@ -1,197 +1,522 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-<link rel="icon" href="images/settings.png" type="image/png">
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Boiled Stone 🎵</title>
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
-
-body {
-  font-family: Arial, sans-serif;
-  color: #eee;
-  background-color: #000;
-}
-
-header {
-  padding: 2rem;
-  text-align: center;
-  background-color: #000;
-  z-index: 10;
-}
-
-header h1 { font-size: 3rem; color:#fff; }
-header p { font-size: 1.1rem; color:#ccc; margin-top:0.5rem; }
-
-.parallax-section {
-  height: 600px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.content-section {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 20px;
-  background: transparent;
-}
-
-.music {
-  display: flex;
-  flex-direction: column;
-  gap: 30px; /* spacing between tracks */
-}
-
-.track-container {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  background: transparent;
-  padding: 0;
-  flex-wrap: wrap; /* wrap on smaller screens */
-}
-
-.track-player {
-  flex: 0 0 400px;  /* wider rectangular player */
-  height: 200px;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.track-player iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.track-info {
-  flex: 1;
-  background: transparent;
-  padding: 0;
-  min-width: 180px;
-}
-
-.track-info .links {
-  font-size: 11px;
-  color: #ddd;
-  margin-bottom: 5px;
-}
-
-.track-info .links a {
-  color: #ff5500;
-  text-decoration: none;
-}
-
-.track-info .links a:hover { text-decoration: underline; }
-
-.track-info .description {
-  background: transparent;
-  border: none;
-  padding: 0;
-  font-size: 0.85rem;
-  color: #eee;
-}
-
-footer {
-  padding: 15px;
-  color: #aaa;
-  font-size: 0.9rem;
-  background-color: #222;
-  text-align: center;
-}
-
-@media screen and (max-width:900px){
-  .parallax-section { height:400px; background-attachment: scroll; }
-  .track-container { flex-direction: column; }
-  .track-player, .track-info { flex: 1; width: 100%; height: 200px; }
-}
-</style>
-</head>
-<body>
-
-<header>
-  <h1>Boiled Stone</h1>
-  <p>Music 🎶</p>
-</header>
-
-<!-- Parallax 1 -->
-<div class="parallax-section" style="background-image: url('images/fond.png');"></div>
-<div class="content-section">
-  <section class="music">
-    <div class="track-container">
-      <div class="track-player">
-        <iframe allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2177804334&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-        </iframe>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101210" />
+    <title>Boiled Stone — Musique & visuels</title>
+    <meta
+      name="description"
+      content="Musique et visuels de Boiled Stone. Écouter sur SoundCloud et découvrir la galerie fractale."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Boiled Stone — Musique & visuels" />
+    <meta
+      property="og:description"
+      content="La musique et les paysages fractals de Boiled Stone."
+    />
+    <meta property="og:url" content="https://syga777.github.io/" />
+    <meta
+      property="og:image"
+      content="https://syga777.github.io/assets/images/social.jpg"
+    />
+    <meta property="og:locale" content="fr_CA" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://syga777.github.io/" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="assets/fonts/space-grotesk-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="assets/style.css?v=20261026-header" />
+    <script src="assets/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <a class="wordmark" href="#accueil" aria-label="Boiled Stone, accueil">
+        <svg
+          class="stone-mark"
+          viewBox="0 0 32 36"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="m16 1 15 9v16l-15 9-15-9V10Z M1 10l15 9 15-9M16 19v16M16 1v18M1 26l15-7 15 7"
+            stroke="currentColor"
+            stroke-width="1.5"
+          />
+        </svg>
+        <span>BOILED STONE</span>
+      </a>
+      <nav aria-label="Navigation principale">
+        <a href="#musique">Musique</a><a href="#univers">Visuels</a>
+      </nav>
+      <div class="header-links">
+        <a
+          class="header-external"
+          href="https://on.soundcloud.com/kgQ1RhqUrbVGngNemt"
+          target="_blank"
+          rel="noopener noreferrer"
+          >SoundCloud <span aria-hidden="true">↗</span
+          ><span class="sr-only"> (nouvel onglet)</span></a
+        >
+        <a
+          class="header-external"
+          href="https://github.com/SyGa777"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub <span aria-hidden="true">↗</span
+          ><span class="sr-only"> (nouvel onglet)</span></a
+        >
       </div>
-      <div class="track-info">
-        <div class="links">
-          <a href="https://soundcloud.com/boiled_stone" target="_blank">Boiled</a> ·
-          <a href="https://soundcloud.com/boiled_stone/project_25" target="_blank">Project_25</a>
+    </header>
+    <main id="contenu">
+      <section class="hero" id="accueil" aria-labelledby="hero-title">
+        <picture class="hero-art"
+          ><source
+            media="(max-width: 700px)"
+            srcset="assets/images/hero-960.webp" />
+          <img
+            src="assets/images/hero-1600.webp"
+            width="1600"
+            height="900"
+            alt="Paysage fractal Mandelbox aux reliefs violets et turquoise"
+            fetchpriority="high"
+        /></picture>
+        <div class="hero-shade"></div>
+        <div class="hero-content wrap">
+          <h1 id="hero-title"><span>BOILED</span> <span>STONE</span></h1>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#musique"
+              ><span class="play-symbol" aria-hidden="true">▶</span> Écouter</a
+            ><a class="button button-quiet" href="#univers">Voir les images</a>
+          </div>
         </div>
-        <div class="description">Just tried to make something stimulating</div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- Parallax 2 -->
-<div class="parallax-section" style="background-image: url('images/icosahedron.png');"></div>
-<div class="content-section">
-  <section class="music">
-    <div class="track-container">
-      <div class="track-player">
-        <iframe allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2136762345&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-        </iframe>
-      </div>
-      <div class="track-info">
-        <div class="links">
-          <a href="https://soundcloud.com/boiled_stone" target="_blank">Boiled</a> ·
-          <a href="https://soundcloud.com/boiled_stone/project_22" target="_blank">Project_22</a>
+      </section>
+      <section
+        class="music-section wrap section-space"
+        id="musique"
+        aria-labelledby="music-title"
+      >
+        <div class="section-heading">
+          <h2 id="music-title">Musique</h2>
+          <a
+            class="text-link"
+            href="https://on.soundcloud.com/kgQ1RhqUrbVGngNemt"
+            target="_blank"
+            rel="noopener noreferrer"
+            >SoundCloud <span aria-hidden="true">↗</span
+            ><span class="sr-only"> (nouvel onglet)</span></a
+          >
         </div>
-        <div class="description">Messed with sound</div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- Parallax 3 -->
-<div class="parallax-section" style="background-image: url('images/menger_sponge.jpg');"></div>
-<div class="content-section">
-  <section class="music">
-    <div class="track-container">
-      <div class="track-player">
-        <iframe allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2178270513%3Fsecret_token%3Ds-TPn9grrBKiu&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-        </iframe>
-      </div>
-      <div class="track-info">
-        <div class="links">
-          <a href="https://soundcloud.com/boiled_stone" target="_blank">Boiled</a> ·
-          <a href="https://soundcloud.com/boiled_stone/bonusproject_51/s-TPn9grrBKiu" target="_blank">bonusecretProject_51</a>
+        <div class="profile-frame" id="profile-player" data-profile-player>
+          <a
+            class="player-placeholder"
+            href="https://on.soundcloud.com/kgQ1RhqUrbVGngNemt"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span>Boiled Stone</span
+            ><span
+              >Écouter sur SoundCloud ↗<span class="sr-only">
+                (nouvel onglet)</span
+              ></span
+            ></a
+          >
         </div>
-        <div class="description">Exclusive hidden project 🔒</div>
+        <section
+          class="secret-track"
+          id="secret-track"
+          hidden
+          aria-labelledby="secret-title"
+        >
+          <div class="secret-heading">
+            <span class="eyebrow">BONUS</span>
+            <h3 id="secret-title" tabindex="-1">bonusecretProject_51</h3>
+          </div>
+          <div id="secret-player"></div>
+          <a
+            class="text-link"
+            href="https://soundcloud.com/boiled_stone/bonusproject_51/s-TPn9grrBKiu"
+            target="_blank"
+            rel="noopener noreferrer"
+            >SoundCloud <span aria-hidden="true">↗</span
+            ><span class="sr-only"> (nouvel onglet)</span></a
+          >
+        </section>
+      </section>
+      <section
+        class="visual-section section-space"
+        id="univers"
+        aria-labelledby="visual-title"
+      >
+        <div class="wrap">
+          <div class="section-heading">
+            <h2 id="visual-title">Visuels</h2>
+            <span class="section-count">12 images</span>
+          </div>
+          <div class="gallery" id="gallery">
+            <a
+              class="gallery-item"
+              href="assets/images/triade-emeraude.webp"
+              data-title="Triade émeraude"
+              data-caption="Géométrie / 01"
+              ><figure>
+                <div class="gallery-image">
+                  <img
+                    src="assets/images/triade-emeraude-760.webp"
+                    srcset="
+                      assets/images/triade-emeraude-760.webp   760w,
+                      assets/images/triade-emeraude-1440.webp 1440w
+                    "
+                    sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 66vw, 820px"
+                    width="760"
+                    height="428"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Triangles fractals emboîtés aux reflets émeraude"
+                  /><span class="image-expand" aria-hidden="true">+</span>
+                </div>
+                <figcaption>
+                  <span>Triade émeraude</span><span>01</span>
+                </figcaption>
+              </figure></a
+            >
+            <a
+              class="gallery-item"
+              href="assets/images/opale.webp"
+              data-title="Opale · cristal liquide"
+              data-caption="Matière / 02"
+              ><figure>
+                <div class="gallery-image">
+                  <img
+                    src="assets/images/opale-760.webp"
+                    srcset="
+                      assets/images/opale-760.webp   760w,
+                      assets/images/opale-1440.webp 1440w
+                    "
+                    sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 42vw, 510px"
+                    width="760"
+                    height="428"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Structure symétrique argentée aux reflets opalescents"
+                  /><span class="image-expand" aria-hidden="true">+</span>
+                </div>
+                <figcaption>
+                  <span>Opale · cristal liquide</span><span>02</span>
+                </figcaption>
+              </figure></a
+            >
+            <a
+              class="gallery-item"
+              href="assets/images/nacre.webp"
+              data-title="Nacre · parallèles"
+              data-caption="Architecture / 03"
+              ><figure>
+                <div class="gallery-image">
+                  <img
+                    src="assets/images/nacre-760.webp"
+                    srcset="
+                      assets/images/nacre-760.webp   760w,
+                      assets/images/nacre-1440.webp 1440w
+                    "
+                    sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 42vw, 510px"
+                    width="760"
+                    height="428"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Deux structures fractales parallèles de couleur nacrée"
+                  /><span class="image-expand" aria-hidden="true">+</span>
+                </div>
+                <figcaption>
+                  <span>Nacre · parallèles</span><span>03</span>
+                </figcaption>
+              </figure></a
+            >
+            <a
+              class="gallery-item"
+              href="assets/images/octaedre.webp"
+              data-title="Octaèdre"
+              data-caption="Relief / 04"
+              ><figure>
+                <div class="gallery-image">
+                  <img
+                    src="assets/images/octaedre-760.webp"
+                    srcset="
+                      assets/images/octaedre-760.webp   760w,
+                      assets/images/octaedre-1440.webp 1440w
+                    "
+                    sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 66vw, 820px"
+                    width="760"
+                    height="428"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Reliefs fractals organiques en violet et bleu électrique"
+                  /><span class="image-expand" aria-hidden="true">+</span>
+                </div>
+                <figcaption><span>Octaèdre</span><span>04</span></figcaption>
+              </figure></a
+            >
+            <a
+              class="gallery-item"
+              href="assets/images/structures.webp"
+              data-title="Structures"
+              data-caption="Architecture / 05"
+              ><figure>
+                <div class="gallery-image">
+                  <img
+                    src="assets/images/structures-760.webp"
+                    srcset="
+                      assets/images/structures-760.webp   760w,
+                      assets/images/structures-1440.webp 1440w
+                    "
+                    sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 42vw, 510px"
+                    width="760"
+                    height="428"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Architecture fractale multicolore et sphères réfléchissantes"
+                  /><span class="image-expand" aria-hidden="true">+</span>
+                </div>
+                <figcaption><span>Structures</span><span>05</span></figcaption>
+              </figure></a
+            >
+            <a
+              class="gallery-item"
+              href="assets/images/menger-chroma.webp"
+              data-title="Menger · chroma"
+              data-caption="Matière / 06"
+              ><figure>
+                <div class="gallery-image">
+                  <img
+                    src="assets/images/menger-chroma-760.webp"
+                    srcset="
+                      assets/images/menger-chroma-760.webp   760w,
+                      assets/images/menger-chroma-1440.webp 1440w
+                    "
+                    sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 66vw, 820px"
+                    width="760"
+                    height="428"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Canyon fractal aux strates roses, vertes et violettes"
+                  /><span class="image-expand" aria-hidden="true">+</span>
+                </div>
+                <figcaption>
+                  <span>Menger · chroma</span><span>06</span>
+                </figcaption>
+              </figure></a
+            >
+          </div>
+          <details class="more-gallery">
+            <summary class="button button-outline">
+              <span class="more-label">Voir les 6 autres</span
+              ><span aria-hidden="true">+</span>
+            </summary>
+            <div class="gallery gallery-more">
+              <a
+                class="gallery-item"
+                href="assets/images/mandelbox.webp"
+                data-title="Mandelbox"
+                data-caption="Géométrie / 07"
+                ><figure>
+                  <div class="gallery-image">
+                    <img
+                      src="assets/images/mandelbox-760.webp"
+                      srcset="
+                        assets/images/mandelbox-760.webp   760w,
+                        assets/images/mandelbox-1440.webp 1440w
+                      "
+                      sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 66vw, 820px"
+                      width="760"
+                      height="428"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Spirale Mandelbox violette et turquoise"
+                    /><span class="image-expand" aria-hidden="true">+</span>
+                  </div>
+                  <figcaption><span>Mandelbox</span><span>07</span></figcaption>
+                </figure></a
+              >
+              <a
+                class="gallery-item"
+                href="assets/images/icosaedre.webp"
+                data-title="Icosaèdre"
+                data-caption="Matière / 08"
+                ><figure>
+                  <div class="gallery-image">
+                    <img
+                      src="assets/images/icosaedre-760.webp"
+                      srcset="
+                        assets/images/icosaedre-760.webp   760w,
+                        assets/images/icosaedre-1440.webp 1440w
+                      "
+                      sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 42vw, 510px"
+                      width="760"
+                      height="428"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Étoiles de matière verte dans un relief violet"
+                    /><span class="image-expand" aria-hidden="true">+</span>
+                  </div>
+                  <figcaption><span>Icosaèdre</span><span>08</span></figcaption>
+                </figure></a
+              >
+              <a
+                class="gallery-item"
+                href="assets/images/menger-nocturne.webp"
+                data-title="Menger · nocturne"
+                data-caption="Architecture / 09"
+                ><figure>
+                  <div class="gallery-image">
+                    <img
+                      src="assets/images/menger-nocturne-760.webp"
+                      srcset="
+                        assets/images/menger-nocturne-760.webp   760w,
+                        assets/images/menger-nocturne-1440.webp 1440w
+                      "
+                      sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 42vw, 510px"
+                      width="760"
+                      height="428"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Profondeurs fractales de Menger dans une lumière violette"
+                    /><span class="image-expand" aria-hidden="true">+</span>
+                  </div>
+                  <figcaption>
+                    <span>Menger · nocturne</span><span>09</span>
+                  </figcaption>
+                </figure></a
+              >
+              <a
+                class="gallery-item"
+                href="assets/images/octaedre-rouge.webp"
+                data-title="Octaèdre · rouge"
+                data-caption="Relief / 10"
+                ><figure>
+                  <div class="gallery-image">
+                    <img
+                      src="assets/images/octaedre-rouge-760.webp"
+                      srcset="
+                        assets/images/octaedre-rouge-760.webp   760w,
+                        assets/images/octaedre-rouge-1440.webp 1440w
+                      "
+                      sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 66vw, 820px"
+                      width="760"
+                      height="428"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Paysage fractal rouge traversé de reflets verts et jaunes"
+                    /><span class="image-expand" aria-hidden="true">+</span>
+                  </div>
+                  <figcaption>
+                    <span>Octaèdre · rouge</span><span>10</span>
+                  </figcaption>
+                </figure></a
+              >
+              <a
+                class="gallery-item"
+                href="assets/images/geometrie-bleue.webp"
+                data-title="Géométrie bleue"
+                data-caption="Géométrie / 11"
+                ><figure>
+                  <div class="gallery-image">
+                    <img
+                      src="assets/images/geometrie-bleue-760.webp"
+                      srcset="
+                        assets/images/geometrie-bleue-760.webp   760w,
+                        assets/images/geometrie-bleue-1440.webp 1440w
+                      "
+                      sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 42vw, 510px"
+                      width="760"
+                      height="428"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Volumes fractals cubiques illuminés en bleu électrique"
+                    /><span class="image-expand" aria-hidden="true">+</span>
+                  </div>
+                  <figcaption>
+                    <span>Géométrie bleue</span><span>11</span>
+                  </figcaption>
+                </figure></a
+              >
+              <a
+                class="gallery-item"
+                href="assets/images/icosaedre-architecture.webp"
+                data-title="Icosaèdre · architecture"
+                data-caption="Architecture / 12"
+                ><figure>
+                  <div class="gallery-image">
+                    <img
+                      src="assets/images/icosaedre-architecture-760.webp"
+                      srcset="
+                        assets/images/icosaedre-architecture-760.webp   760w,
+                        assets/images/icosaedre-architecture-1440.webp 1440w
+                      "
+                      sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 66vw, 820px"
+                      width="760"
+                      height="428"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Plans fractals triangulaires traversés de lumière rose et verte"
+                    /><span class="image-expand" aria-hidden="true">+</span>
+                  </div>
+                  <figcaption>
+                    <span>Icosaèdre · architecture</span><span>12</span>
+                  </figcaption>
+                </figure></a
+              >
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer wrap">
+      <a class="footer-name" href="#accueil">BOILED STONE</a>
+      <p>© <span id="year">2026</span> · Tous droits réservés.</p>
+    </footer>
+    <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+    <dialog class="lightbox" aria-labelledby="lightbox-title">
+      <div class="lightbox-top">
+        <div>
+          <p class="eyebrow" id="lightbox-index"></p>
+          <h2 id="lightbox-title"></h2>
+        </div>
+        <button
+          class="lightbox-close"
+          type="button"
+          aria-label="Fermer l’image"
+        >
+          ×
+        </button>
       </div>
-    </div>
-  </section>
-</div>
-
-<!-- Additional parallax images -->
-<div class="parallax-section" style="background-image: url('images/i,gg.png');"></div>
-<div class="parallax-section" style="background-image: url('images/no.png');"></div>
-<div class="parallax-section" style="background-image: url('images/mandelbox_scale_2.jpg');"></div>
-<div class="parallax-section" style="background-image: url('images/menger_spongekhhkh.png');"></div>
-
-<footer>
-  © 2025 Boiled Stone — Tous droits réservés | All rights reserved
-</footer>
-
-</body>
+      <div class="lightbox-image">
+        <img id="lightbox-image" alt="" width="1920" height="1080" />
+        <p class="lightbox-error" hidden>
+          Impossible de charger l’image. <a href="#">Ouvrir le fichier</a>
+        </p>
+      </div>
+      <div class="lightbox-bottom">
+        <button
+          class="lightbox-prev"
+          type="button"
+          aria-label="Image précédente"
+        >
+          ←</button
+        ><span id="lightbox-position" aria-live="polite"></span
+        ><a id="lightbox-download" download>Télécharger</a
+        ><button
+          class="lightbox-next"
+          type="button"
+          aria-label="Image suivante"
+        >
+          →
+        </button>
+      </div>
+    </dialog>
+  </body>
 </html>
-
-

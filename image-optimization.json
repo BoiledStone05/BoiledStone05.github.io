@@ -1,0 +1,105 @@
+{
+  "quality": 93,
+  "original_dimensions_preserved": true,
+  "images": [
+    {
+      "source": "mandelbox scale -2.png",
+      "asset": "mandelbox.webp",
+      "width": 1920,
+      "height": 1080,
+      "original_bytes": 3899847,
+      "webp_bytes": 729942
+    },
+    {
+      "source": "menger_spongekhhkh.png",
+      "asset": "menger-chroma.webp",
+      "width": 1920,
+      "height": 1080,
+      "original_bytes": 4384025,
+      "webp_bytes": 980512
+    },
+    {
+      "source": "TRIAD-EMERAUDE-2K.png",
+      "asset": "triade-emeraude.webp",
+      "width": 2560,
+      "height": 1440,
+      "original_bytes": 5355248,
+      "webp_bytes": 929864
+    },
+    {
+      "source": "OPALE-CRISTAL-LIQUIDE-2K.png",
+      "asset": "opale.webp",
+      "width": 2560,
+      "height": 1440,
+      "original_bytes": 5518456,
+      "webp_bytes": 805556
+    },
+    {
+      "source": "NACRE-PARALLELES-GPU-2K.png",
+      "asset": "nacre.webp",
+      "width": 2560,
+      "height": 1440,
+      "original_bytes": 3517299,
+      "webp_bytes": 581794
+    },
+    {
+      "source": "octahedron.jpg",
+      "asset": "octaedre.webp",
+      "width": 2560,
+      "height": 1440,
+      "original_bytes": 2191406,
+      "webp_bytes": 1422956
+    },
+    {
+      "source": "ouiner.png",
+      "asset": "structures.webp",
+      "width": 2560,
+      "height": 1440,
+      "original_bytes": 8781886,
+      "webp_bytes": 2138100
+    },
+    {
+      "source": "icosahedron2312.png",
+      "asset": "icosaedre.webp",
+      "width": 1920,
+      "height": 1080,
+      "original_bytes": 4856481,
+      "webp_bytes": 1121886
+    },
+    {
+      "source": "menger sponge.png",
+      "asset": "menger-nocturne.webp",
+      "width": 2560,
+      "height": 1440,
+      "original_bytes": 5508262,
+      "webp_bytes": 813684
+    },
+    {
+      "source": "octahedronin2.jpg",
+      "asset": "octaedre-rouge.webp",
+      "width": 2560,
+      "height": 1440,
+      "original_bytes": 1827731,
+      "webp_bytes": 1201106
+    },
+    {
+      "source": "settings12.png",
+      "asset": "geometrie-bleue.webp",
+      "width": 2560,
+      "height": 1440,
+      "original_bytes": 5906591,
+      "webp_bytes": 1193558
+    },
+    {
+      "source": "icosahedron.png",
+      "asset": "icosaedre-architecture.webp",
+      "width": 1920,
+      "height": 1080,
+      "original_bytes": 3645057,
+      "webp_bytes": 711014
+    }
+  ],
+  "original_bytes": 55392289,
+  "webp_bytes": 12629972,
+  "reduction_percent": 77.2
+}
